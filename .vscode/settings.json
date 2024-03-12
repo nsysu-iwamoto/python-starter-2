@@ -1,7 +1,10 @@
 {
   "cSpell.words": [
+    "allclose",
     "capsys",
     "fizzbuzz",
-    "Nabeatsu"
+    "Nabeatsu",
+    "ndarray",
+    "nilpotent"
   ]
 }

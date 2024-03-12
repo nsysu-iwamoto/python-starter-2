@@ -19,4 +19,8 @@ pip install pytest pytest-timeout
 
 Try `python -m pytest` on the root directory of this repository (i.e., where this file is).
 
+If you want to test your code for optional problems, run `python -m pytest --optionial`.
+
 If you want to run a specific test file, you can use `python -m pytest -k tests/test_file_name.py`.
+
+(But test codes may have bugs because you are the first tester of these tests! Please let me know if you find any problems.)
