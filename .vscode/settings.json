@@ -3,6 +3,7 @@
     "allclose",
     "capsys",
     "fizzbuzz",
+    "Kreyszig",
     "Nabeatsu",
     "ndarray",
     "nilpotent"
