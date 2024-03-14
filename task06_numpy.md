@@ -1,4 +1,4 @@
-# Task 06: Numpy
+# Task 06: NumPy
 
 Open `task06_numpy.py` and edit the file to do the following tasks.
 

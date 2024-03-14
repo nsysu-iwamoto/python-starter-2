@@ -15,6 +15,23 @@ pip install numpy scipy
 pip install pytest pytest-timeout
 ```
 
+## Tasks
+
+- [ ] 5. [Basic Numerics](/task05_basic.md)
+- [ ] 6. [NumPy](/task06_numpy.md)
+- [ ] 7. [Matrix](/task07_matrix.md)
+- [ ] 8. [Newton Method](/task08_newton.md)
+
+Open each `.md` file. Following the instructions, edit `.py` files.
+
+You can edit `.py` files on GitHub, but it is recommended to code on your computer. Following Git/GitHub starter, you are asked to
+
+- **clone** this GitHub repository (*remote repository*) to your computer,
+- edit your files on your computer,
+- **commit** your changes to the repository in your computer (*local repository*), and
+- **push** your local repository to the *remote repository* on GitHub.
+- Then, if you can, try **creating a pull request** following [this instruction](/misc/github_pull_request.pdf).
+
 ## How to run test codes
 
 Try `python -m pytest` on the root directory of this repository (i.e., where this file is).

@@ -1,4 +1,4 @@
-# Task 07: Newton Method
+# Task 08: Newton Method
 
 
 def fixed_point_iteration(g, x0, n):

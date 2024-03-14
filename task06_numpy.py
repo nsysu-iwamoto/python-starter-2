@@ -1,4 +1,4 @@
-# Task 06: Matrices
+# Task 06: NumPy
 
 import math
 
