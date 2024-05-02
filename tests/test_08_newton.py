@@ -53,7 +53,9 @@ def test_newton():
     assert task.newton(*f_sqrt(9), x0) == pytest.approx(3)
     assert task.newton(*f_sqrt(1), x0) == pytest.approx(1)
     assert task.newton(*f_sqrt(1e-8), x0) == pytest.approx(1e-4)
+    assert task.newton(*f_sqrt(1e-20), x0) == pytest.approx(1e-10)
     assert task.newton(*f_sqrt(1e8), x0) == pytest.approx(1e4)
+    assert task.newton(*f_sqrt(1e28), x0) == pytest.approx(1e14)
     assert task.newton(*f_sqrt(5), x0) == pytest.approx(math.sqrt(5))
     for _ in range(10):
         n = random.randint(100, 1000)

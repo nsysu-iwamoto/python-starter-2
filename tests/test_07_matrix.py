@@ -47,53 +47,57 @@ def integer_matrices():
     ]
 
 
+def is_bool(value):
+    return isinstance(value, bool) or isinstance(value, np.bool_)
+
+
 def test_is_square(integer_matrices):
     assert_has_function(task, "is_square")
     for m, property in integer_matrices:
         actual = task.is_square(m)
         assert not isinstance(actual, str), 'return True/False, not "True"/"False"'
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["square"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["square"], f"failure in {m}"
 
 
 def test_is_symmetric(integer_matrices):
     assert_has_function(task, "is_symmetric")
     for m, property in integer_matrices:
         actual = task.is_symmetric(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["symmetric"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["symmetric"], f"failure in {m}"
 
 
 def test_is_skew_symmetric(integer_matrices):
     assert_has_function(task, "is_skew_symmetric")
     for m, property in integer_matrices:
         actual = task.is_skew_symmetric(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["skew"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["skew"], f"failure in {m}"
 
 
 def test_is_upper_triangular(integer_matrices):
     assert_has_function(task, "is_upper_triangular")
     for m, property in integer_matrices:
         actual = task.is_upper_triangular(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["upper"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["upper"], f"failure in {m}"
 
 
 def test_is_lower_triangular(integer_matrices):
     assert_has_function(task, "is_lower_triangular")
     for m, property in integer_matrices:
         actual = task.is_lower_triangular(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["lower"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["lower"], f"failure in {m}"
 
 
 def test_is_diagonal(integer_matrices):
     assert_has_function(task, "is_diagonal")
     for m, property in integer_matrices:
         actual = task.is_diagonal(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["diagonal"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["diagonal"], f"failure in {m}"
 
 
 @optional
@@ -101,8 +105,8 @@ def test_is_scalar_matrix(integer_matrices):
     skip_if_no_function(task, "is_scalar_matrix")
     for m, property in integer_matrices:
         actual = task.is_scalar_matrix(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["scalar"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["scalar"], f"failure in {m}"
 
 
 @optional
@@ -110,8 +114,8 @@ def test_is_identity_matrix(integer_matrices):
     skip_if_no_function(task, "is_identity_matrix")
     for m, property in integer_matrices:
         actual = task.is_identity_matrix(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["one"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["one"], f"failure in {m}"
 
 
 @optional
@@ -119,8 +123,8 @@ def test_is_zero_matrix(integer_matrices):
     skip_if_no_function(task, "is_zero_matrix")
     for m, property in integer_matrices:
         actual = task.is_zero_matrix(m)
-        assert isinstance(actual, bool), "result must be a bool"
-        assert actual == property["zero"]
+        assert is_bool(actual), "result must be a bool"
+        assert actual == property["zero"], f"failure in {m}"
 
 
 @optional
@@ -200,8 +204,8 @@ def test_classify_linear_system_advanced():
         [[1, 1, 2, 4], [2, 1, 3, 2], [1, 2, 1, 5], [1, 1, 1, 2]],
     ]
     for i in examples_many:
-        assert task.classify_linear_system(np.array(i)) == "many"
+        assert task.classify_linear_system(np.array(i)) == "many", f"failure in {i}"
     for i in examples_unique:
-        assert task.classify_linear_system(np.array(i)) == "unique"
+        assert task.classify_linear_system(np.array(i)) == "unique", f"failure in {i}"
     for i in examples_none:
-        assert task.classify_linear_system(np.array(i)) == "none"
+        assert task.classify_linear_system(np.array(i)) == "none", f"failure in {i}"
