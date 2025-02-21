@@ -61,7 +61,7 @@ solution = newton(f0, f1, x0)
 print(solution)
 ```
 
-Complete the function `newton(f, fp, x0, eps=1e-7, n=100000)`, where you need to follow the specification.
+**Following the algorithm given in Table 19.1**, complete the function `newton(f, fp, x0, eps=1e-7, n=100000)`, where you need to follow the specification.
 
 - Input: aforementioned `f`, `fp`, `x0` (int/float), `eps` (float), and `n` (int).
 - Output: a floating-point number or `None`.
