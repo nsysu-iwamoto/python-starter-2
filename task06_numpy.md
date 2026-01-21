@@ -16,6 +16,8 @@ In this task, you'll learn:
 - Vector operations are fundamental to mechanics, electromagnetism, and relativity
 - NumPy is the foundation for scientific computing in Python
 
+**Note:** This task builds on your understanding of NumPy arrays. In [Task 07](task07_matrix.md), you'll dive deeper into matrix properties.
+
 Open `task06_numpy.py` and edit the file to do the following tasks.
 
 You may open this file on GitHub so that equations are shown properly.
@@ -93,7 +95,7 @@ np.radians(degree)  # or np.deg2rad(degree)
 
 We are going to use **tuples** to represent vectors and points. Complete a function `distance(p1, p2)` that returns the distance between two points `p1` and `p2`.
 
-- **Input**: `p1` and `p2` are tuples of two floats. Namely, `(x1, y1)` and `(x2, y2)`.
+- **Input**: `p1` and `p2` are tuples of two floats. For example, `(x1, y1)` and `(x2, y2)`.
 - **Output**: a float representing the distance between `p1` and `p2`.
 
 The distance formula is:

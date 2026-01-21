@@ -19,6 +19,8 @@ In this task, you'll learn:
 - Iterative methods solve equations that have no analytical solutions
 - These techniques are used in computational physics, from particle trajectories to field equations
 
+**Prerequisites:** Make sure you understand functions and basic Python from [Task 05](task05_basic.md).
+
 Open `task08_newton.py` and edit the file to do the following tasks.
 
 ### Understanding Functions as Arguments

@@ -16,6 +16,8 @@ In this task, you'll learn:
 - Mathematical constants like $e$ are fundamental to exponential decay, growth, and wave functions
 - Numerical precision is crucial for accurate physics calculations
 
+**What's next:** After this task, you'll learn NumPy in [Task 06](task06_numpy.md) for more powerful numerical operations.
+
 Open `task05_basic.py` and edit the file to do the following tasks.
 
 ## Task 05a (Required)

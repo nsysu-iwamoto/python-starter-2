@@ -16,6 +16,8 @@ In this task, you'll learn:
 - Matrix properties reveal conservation laws and symmetries in physical systems
 - Understanding solution types helps predict system behavior
 
+**Prerequisites:** This task builds on NumPy skills from [Task 06](task06_numpy.md). Make sure you understand NumPy arrays first.
+
 Open `task07_matrix.py` and edit the file to do the following tasks.
 
 ### Names for Matrices
