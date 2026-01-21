@@ -6,10 +6,10 @@ An Introductory exercise for numerical analysis (Step 2), prepared for Sho's lec
 
 ## Requirements
 
-You need to install [`NumPy`](https://numpy.org/) and [`SciPy`](https://scipy.org/). Furthermore, if you want to run "test codes" on your laptop, you will need [`PyTest`](https://pytest.org/) and `PyTest-Timeout`. They can be installed using `pip`:
+You need to install [`NumPy`](https://numpy.org/) and [`SciPy`](https://scipy.org/). If you want to run tests on your laptop, you will also need [`PyTest`](https://pytest.org/) and `PyTest-Timeout`.
 
 ```bash
-# commands may be python3 and pip3 on your system,
+# commands may be python3 and pip3 on your system
 python --version  # Check version >= 3.8
 pip --version     # Check your pip is for correct Python version
 
@@ -23,25 +23,22 @@ pip install numpy scipy pytest pytest-timeout
 - [ ] 7. [Matrix](task07_matrix.md) - Matrix operations and properties
 - [ ] 8. [Newton Method](task08_newton.md) - Numerical methods
 
-Each task includes:
-
-- Basic problems (required)
-- Optional problems (advanced, for extra learning)
+Each task includes basic problems (required) and optional problems (advanced).
 
 ## How to Work on Tasks
 
-Open each `.md` file. Following the instructions, edit `.py` files.
+Open each `.md` file and follow the instructions to edit `.py` files.
 
 You can edit `.py` files on GitHub, but it is recommended to code on your computer. Following Git/GitHub starter from python-starter-1, you are asked to:
 
-- **clone** this GitHub repository (*remote repository*) to your computer,
-- edit your files on your computer,
-- **commit** your changes to the repository in your computer (*local repository*), and
-- **push** your local repository to the *remote repository* on GitHub.
+- **clone** this repository to your computer,
+- edit your files,
+- **commit** your changes, and
+- **push** to GitHub.
 
 ## Testing Your Code
 
-Test system is provided on GitHub, but you can run the tests on your computer if you install the tools above.
+Test system is provided on GitHub, but you can run tests on your computer if you install the tools above.
 
 ```bash
 # Run all tests

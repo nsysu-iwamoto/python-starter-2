@@ -1,6 +1,6 @@
 # Task 07: Matrix
 
-**Goal:** Learn to work with matrices and their properties using NumPy
+**Goal:** Work with matrices and their properties using NumPy
 
 ## Overview
 
@@ -9,7 +9,6 @@ In this task, you'll learn:
 - How to check matrix properties (square, symmetric, triangular, etc.)
 - How to use NumPy functions for matrix operations
 - How to classify linear systems of equations
-- How to use matrix rank to determine solution existence
 
 Open `task07_matrix.py` and edit the file to do the following tasks.
 
@@ -43,7 +42,7 @@ You can assume `m` is a NumPy 2d array with at least one element; no need to che
 - **Diagonal matrix**: All elements outside the main diagonal are zero
 
 <details>
-<summary>Click to see hint 1</summary>
+<summary>Click to see hint</summary>
 
 Use the `shape` attribute to get matrix dimensions:
 
@@ -52,11 +51,6 @@ rows, cols = m.shape
 ```
 
 For a square matrix: `rows == cols`
-
-</details>
-
-<details>
-<summary>Click to see hint 2</summary>
 
 Use NumPy's transpose:
 
@@ -69,11 +63,6 @@ To check if two arrays are equal:
 ```python
 np.array_equal(m, m.T)  # Check if m equals its transpose
 ```
-
-</details>
-
-<details>
-<summary>Click to see hint 3</summary>
 
 To check if a matrix is triangular or diagonal, use NumPy functions:
 
@@ -98,7 +87,7 @@ In Kreyszig Section 7.5, we have learned how we can classify linear systems of e
 Let's make a code for this test.
 
 As a linear system of equations is equivalent to an augmented matrix (See Section 7.3), we can use it as the input.
-The output can just be a string: `"unique"`, `"many"`, `"none"` to represent how many solutions we have.
+The output can just be a string: `"unique"`, `"many"`, or `"none"` to represent how many solutions we have.
 
 Complete the function `classify_linear_system(aug)`.
 
@@ -107,8 +96,6 @@ Complete the function `classify_linear_system(aug)`.
 - **Input**: `aug` is the augmented matrix of a linear system of equations. It is a 2d NumPy array.
 - **Output**: a string: `"unique"`, `"many"`, or `"none"`.
 
-### Mathematical Background
-
 For a system $Ax = b$ with augmented matrix $[A|b]$:
 
 - **Unique solution**: $\text{rank}(A) = \text{rank}([A|b]) = n$ (number of unknowns)
@@ -116,16 +103,11 @@ For a system $Ax = b$ with augmented matrix $[A|b]$:
 - **No solution**: $\text{rank}(A) < \text{rank}([A|b])$
 
 <details>
-<summary>Click to see hint 1</summary>
+<parameter name="Click to see hint</summary>
 
-You don't have to implement rank calculation. Instead, read [the manual of numpy.linalg](https://numpy.org/doc/stable/reference/routines.linalg.html) very carefully.
+You don't have to implement rank calculation. Read [the manual of numpy.linalg](https://numpy.org/doc/stable/reference/routines.linalg.html) very carefully.
 
 Look for `numpy.linalg.matrix_rank()`.
-
-</details>
-
-<details>
-<summary>Click to see hint 2</summary>
 
 The augmented matrix has the form $[A|b]$ where:
 
@@ -138,11 +120,6 @@ Extract them:
 A = aug[:, :-1]  # All rows, all columns except last
 b = aug[:, -1]   # All rows, last column only
 ```
-
-</details>
-
-<details>
-<summary>Click to see hint 3</summary>
 
 Calculate ranks and compare:
 
@@ -191,16 +168,7 @@ You can further implement the following function, where you need to derive/find 
 
 - `is_nilpotent(m)` to check if `m` is nilpotent (Problem 7.2.8).
 
-### Definition
-
-- **Nilpotent matrix**: There exists some positive integer $k$ such that $A^k = 0$
-
-<details>
-<summary>Click to see hint</summary>
-
-Research the mathematical theorem about nilpotent matrices and their eigenvalues.
-
-</details>
+**Nilpotent matrix**: There exists some positive integer $k$ such that $A^k = 0$
 
 ## Task 07e (Optional, Advanced)
 
@@ -210,60 +178,19 @@ Furthermore, what happens if you run your code for non-integer matrices? Do they
 
 (This is why, in **real projects**, we **need to** use pre-built codes and **should not** write our own codes. Meanwhile, in lecture courses, you are asked to write your own code so that you know how the pre-built codes are written and what kinds of caveats lie there.)
 
-### Think About
-
-- Floating-point precision and comparison
-- Why `==` might not work reliably for floats
-- How to properly compare floating-point numbers
-
 ---
 
 ## Common Mistakes
 
-1. **Not checking if matrix is square first**
-   - ❌ Checking symmetry without verifying the matrix is square
-   - ✅ For symmetric/triangular matrices, first check if square
-
-2. **Using `==` instead of `np.array_equal()`**
-   - ❌ `m == m.T` (returns an array of booleans)
-   - ✅ `np.array_equal(m, m.T)` (returns a single boolean)
-
-3. **Confusing rank of A vs rank of [A|b]**
-   - ❌ Only checking rank of coefficient matrix
-   - ✅ Compare both ranks to classify the system
-
-4. **Off-by-one errors when extracting submatrices**
-   - ❌ `aug[:, -2]` for last column
-   - ✅ `aug[:, -1]` for last column
-
----
-
-## Understanding NumPy Indexing
-
-### Slicing 2D Arrays
-
-```python
-import numpy as np
-
-A = np.array([[1, 2, 3],
-              [4, 5, 6],
-              [7, 8, 9]])
-
-# Get all rows, first two columns
-A[:, :2]  # [[1, 2], [4, 5], [7, 8]]
-
-# Get all rows, last column
-A[:, -1]  # [3, 6, 9]
-
-# Get first two rows, all columns
-A[:2, :]  # [[1, 2, 3], [4, 5, 6]]
-```
+1. **Not checking if matrix is square first** - For symmetric/triangular matrices, first check if square
+2. **Using `==` instead of `np.array_equal()`** - `m == m.T` returns an array, use `np.array_equal(m, m.T)`
+3. **Confusing rank of A vs rank of [A|b]** - Compare both ranks to classify the system
+4. **Off-by-one errors** - Use `aug[:, -1]` for last column, not `aug[:, -2]`
 
 ---
 
 ## Need Help?
 
 - Review NumPy documentation on array operations and linear algebra
-- Understand matrix properties from your textbook (Kreyszig Section 7.2)
 - Test with simple examples first (e.g., identity matrix, zero matrix)
-- See the [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup and testing help
+- See [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup help

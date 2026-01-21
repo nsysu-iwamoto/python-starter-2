@@ -1,6 +1,6 @@
 # Task 08: Newton Method
 
-**Goal:** Learn to implement numerical methods for finding roots of equations
+**Goal:** Implement numerical methods for finding roots of equations
 
 ## Overview
 
@@ -12,7 +12,6 @@ In this task, you'll learn:
 - How to implement iterative methods for solving equations
 - How to implement the Newton-Raphson method
 - How to pass functions as arguments to other functions
-- How to handle convergence and stopping criteria
 
 Open `task08_newton.py` and edit the file to do the following tasks.
 
@@ -44,39 +43,12 @@ print(fixed_point_iteration(g, 1.0, 2))
   - `n` is the number of iterations (int).
 - **Output**: a list of n+1 floats. The first element is x0. The last element is xn.
 
-### Understanding Functions as Arguments
-
-In Python, functions are "first-class objects", meaning you can:
-
-- Assign functions to variables
-- Pass functions as arguments to other functions
-- Return functions from other functions
-
-Example:
-
-```python
-def square(x):
-    return x * x
-
-def apply_twice(f, x):
-    return f(f(x))
-
-result = apply_twice(square, 3)  # Returns 81 (= (3²)²)
-```
-
 <details>
-<summary>Click to see hint 1</summary>
+<summary>Click to see hint</summary>
 
-The fixed-point iteration formula is:
-
-$$x_{n+1} = g(x_n)$$
+The fixed-point iteration formula is: $x_{n+1} = g(x_n)$
 
 Starting from $x_0$, repeatedly apply $g$ to get the sequence.
-
-</details>
-
-<details>
-<summary>Click to see hint 2</summary>
 
 Build the sequence iteratively:
 
@@ -130,11 +102,7 @@ print(solution)
 - **Input**: aforementioned `f`, `fp`, `x0` (int/float), `eps` (float), and `n` (int).
 - **Output**: a floating-point number or `None`.
 
-### Newton's Method Formula
-
-The Newton-Raphson iteration formula is:
-
-$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+The Newton-Raphson iteration formula is: $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
 
 The method stops when:
 
@@ -142,7 +110,7 @@ The method stops when:
 - Maximum iterations $n$ is reached (failure)
 
 <details>
-<summary>Click to see hint 1</summary>
+<summary>Click to see hint</summary>
 
 The Newton method algorithm:
 
@@ -152,11 +120,6 @@ The Newton method algorithm:
    - If $|x_{\text{new}} - x| < \epsilon$, return $x_{\text{new}}$ (converged!)
    - Otherwise, set $x = x_{\text{new}}$ and continue
 3. If max iterations reached, return `None`
-
-</details>
-
-<details>
-<summary>Click to see hint 2</summary>
 
 Implementation skeleton:
 
@@ -182,16 +145,6 @@ def newton(f, fp, x0, eps=1e-7, n=100000):
     # Max iterations reached
     return None
 ```
-
-</details>
-
-<details>
-<summary>Click to see hint 3</summary>
-
-Don't forget to handle edge cases:
-
-- What if $f'(x) = 0$? (Division by zero)
-- What if the method doesn't converge? (Return `None`)
 
 </details>
 
@@ -224,13 +177,6 @@ Calculate the solution of $x^3 - 2x + 2 = 0$ (we know it has only one solution) 
 
 What happens if you use `x0 = 1.0` as the initial value? Describe what happens and explain why.
 
-### Investigation
-
-- Try the function with `x0 = 1.0`
-- What does the method return?
-- Graph the function to understand what's happening
-- Think about where the derivative is zero
-
 <details>
 <summary>Click to see hint</summary>
 
@@ -246,57 +192,15 @@ Consider:
 
 ## Common Mistakes
 
-1. **Not checking for division by zero**
-   - ❌ `x_new = x - f(x) / fp(x)` without checking if `fp(x) == 0`
-   - ✅ Check if `fp(x) == 0` and return `None` if true
-
-2. **Wrong convergence check**
-   - ❌ Checking if `abs(f(x)) < eps` (checking function value)
-   - ✅ Checking if `abs(x_new - x) < eps` (checking change in x)
-
-3. **Not handling non-convergence**
-   - ❌ Infinite loop or error when method doesn't converge
-   - ✅ Return `None` after max iterations
-
-4. **Wrong sequence length**
-   - ❌ For `fixed_point_iteration`, returning n elements instead of n+1
-   - ✅ Include the initial value x0 in the sequence
-
----
-
-## Understanding Numerical Methods
-
-### Fixed-Point Iteration
-
-A method where you repeatedly apply a function:
-
-$$x_{n+1} = g(x_n)$$
-
-Starting from $x_0$, you get: $x_0, g(x_0), g(g(x_0)), ...$
-
-If this sequence converges to some value $x^*$, then $x^* = g(x^*)$ (fixed point).
-
-### Newton's Method
-
-A more sophisticated method that uses the derivative:
-
-$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
-
-Geometrically, this finds where the tangent line at $x_n$ crosses the x-axis.
-
-### Convergence
-
-Not all methods converge from all starting points:
-
-- Choice of initial value $x_0$ matters
-- Some methods may oscillate or diverge
-- Stopping criteria (epsilon, max iterations) prevent infinite loops
+1. **Not checking for division by zero** - Check if `fp(x) == 0` and return `None` if true
+2. **Wrong convergence check** - Check `abs(x_new - x) < eps` (change in x), not `abs(f(x)) < eps`
+3. **Not handling non-convergence** - Return `None` after max iterations
+4. **Wrong sequence length** - For `fixed_point_iteration`, return n+1 elements (include x0)
 
 ---
 
 ## Need Help?
 
 - Review Section 19.2 of Kreyszig textbook
-- Understand the geometric interpretation of Newton's method
 - Test with simple examples first (e.g., finding $\sqrt{2}$ by solving $x^2 - 2 = 0$)
-- See the [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup and testing help
+- See [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup help
