@@ -1,0 +1,7 @@
+# Python Starter 2 - Requirements
+# Install with: pip install -r requirements.txt
+
+numpy>=2.4.1
+scipy>=1.17.0
+pytest>=9.0.2
+pytest-timeout>=2.4.0

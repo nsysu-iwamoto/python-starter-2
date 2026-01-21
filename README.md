@@ -13,7 +13,11 @@ You need to install [`NumPy`](https://numpy.org/) and [`SciPy`](https://scipy.or
 python --version  # Check version >= 3.11
 pip --version     # Check your pip is for correct Python version
 
+# Option 1: Install packages directly
 pip install numpy scipy
+
+# Option 2: Use requirements file (recommended)
+pip install -r requirements.txt
 ```
 
 Motivated student who uses [`uv`](https://docs.astral.sh/uv/) can install all the required packages by one command:

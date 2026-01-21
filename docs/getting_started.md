@@ -8,7 +8,7 @@ This guide will help you set up your environment and start working on numerical 
 
 Before starting, you should have:
 
-1. **Python 3.8 or higher** installed on your computer
+1. **Python 3.11 or higher** installed on your computer
    - Check: `python --version` or `python3 --version`
    - Download from: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
@@ -58,11 +58,14 @@ Most students should use this method:
 
 ```bash
 # First, check your Python and pip versions
-python --version  # Should be >= 3.8
+python --version  # Should be >= 3.11
 pip --version     # Check it's for the correct Python version
 
-# Install required packages
+# Install required packages (Option 1: direct install)
 pip install numpy scipy pytest pytest-timeout
+
+# Or use the requirements file (Option 2: recommended)
+pip install -r requirements.txt
 ```
 
 Notice, however, that this operation installs packages globally, affecting all of your Python projects.
