@@ -5,7 +5,7 @@
 ## Overview
 
 In Section 19.2 of Kreyszig, methods for numerical calculations are introduced.
-First, see (!= read) that section. You will find a few examples. It is important to implement them when you read the textbook.
+First, look at that section (you don't need to read every word). You will find a few examples. It is important to implement them when you read the textbook.
 
 In this task, you'll learn:
 
@@ -45,7 +45,7 @@ So, let us reproduce this sequence.
 
 Complete the function `fixed_point_iteration(g, x0, n)` and reproduce the sequences in Example 1.
 
-Namely, the following code should print-out `[1.0, 0.6666666666666666, 0.48148148148148145]`.
+For example, the following code should print `[1.0, 0.6666666666666666, 0.48148148148148145]`.
 
 ```python
 def g(x):

@@ -58,7 +58,7 @@ The Euler's number [can be obtained by](https://en.wikipedia.org/wiki/E_(mathema
 
 $$ e = \sum_{n=0}^{\infty} \frac{1}{n!}$$
 
-Namely, `1 + 1 + 1/2 + 1/6 + 1/24 + 1/120 + ....`.
+In other words: `1 + 1 + 1/2 + 1/6 + 1/24 + 1/120 + ....`.
 
 Make a function `calc_e()` to calculate `e` by this method, at least up to 9-th digit `2.718281828`.
 
