@@ -71,7 +71,7 @@ def test_rotation_matrix_2d_degree():
         expected = np.array([[c, -s], [s, c]])
         assert_allclose(r, expected)
     for _ in range(10):
-        r = task.rotation_matrix_2d(random.randint(-2000, 2000))
+        r = task.rotation_matrix_2d_degree(random.randint(-2000, 2000))
         assert r[0, 0] == r[1, 1], "diagonal elements should be equal"
         assert r[0, 1] == pytest.approx(-r[1, 0]), "off-diagonal sum should be zero"
 

@@ -1,0 +1,30 @@
+# Ruff configuration for Python Starter 2
+# Educational project - relaxed rules for learning
+
+target-version = "py311"
+line-length = 100
+
+[lint]
+# Select rules appropriate for beginners
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+]
+
+# Ignore rules that might confuse beginners
+ignore = [
+    "E501",  # Line too long (let students learn gradually)
+]
+
+[lint.per-file-ignores]
+# Allow unused imports in task files (skeleton code)
+"task*.py" = ["F401", "F841"]
+# Allow unused imports and variables in tests
+"tests/*.py" = ["F401", "F841"]
+
+[format]
+# Use double quotes for consistency
+quote-style = "double"
+indent-style = "space"

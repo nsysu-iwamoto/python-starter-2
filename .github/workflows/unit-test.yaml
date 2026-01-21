@@ -21,9 +21,12 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.14"
+          python-version: "3.11"
       - name: Set up packages
-        run: pip install numpy scipy pytest pytest-timeout
+        run: pip install numpy scipy pytest pytest-timeout ruff
+      - name: Run code quality checks
+        run: ruff check . --output-format=github
+        continue-on-error: true
       - name: Run tests with pytest
         run: python -m pytest --junitxml=junit/test-results.xml
       #      - name: Upload test results

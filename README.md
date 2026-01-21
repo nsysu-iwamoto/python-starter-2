@@ -36,6 +36,40 @@ Each task includes:
 - Basic problems (required)
 - Optional problems (advanced, for extra learning)
 
+## Getting Started
+
+1. **Check Prerequisites**: You should have completed Python Starter 1 first
+2. **Install dependencies**: See Requirements section above
+3. **Start with Task 05**: Work through tasks in order
+4. **Test your code**: Run `python -m pytest tests/` to check your solutions
+5. **Submit your work**: See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions
+
+## Troubleshooting
+
+### Common Issues
+
+**Import Error: No module named 'numpy'**
+```bash
+# Make sure you installed the packages:
+pip install numpy scipy pytest pytest-timeout
+```
+
+**Tests fail with floating-point differences**
+- This is normal! Small differences like `2.99999999` vs `3.0` happen in numerical computing
+- Our tests use `pytest.approx()` to handle this automatically
+- Read the error message to see if the difference is acceptable
+
+**Function not found errors**
+- Make sure your function name exactly matches what's in the instructions
+- Check spelling and capitalization (Python is case-sensitive)
+
+**Getting stuck on a task?**
+1. Read the task markdown file (`task*.md`) completely
+2. Check the hints (expand the "Show Hint" sections)
+3. Look at the test file to see what's expected
+4. Try breaking the problem into smaller steps
+5. Ask your instructor for help
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
