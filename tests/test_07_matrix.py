@@ -104,7 +104,7 @@ def test_is_diagonal(integer_matrices):
 def test_is_scalar_matrix(integer_matrices):
     skip_if_no_function(task, "is_scalar_matrix")
     for m, property in integer_matrices:
-        actual = task.is_scalar_matrix(m)
+        actual = task.is_scalar_matrix(m)  # ty: ignore[unresolved-attribute]
         assert is_bool(actual), "result must be a bool"
         assert actual == property["scalar"], f"failure in {m}"
 
@@ -113,7 +113,7 @@ def test_is_scalar_matrix(integer_matrices):
 def test_is_identity_matrix(integer_matrices):
     skip_if_no_function(task, "is_identity_matrix")
     for m, property in integer_matrices:
-        actual = task.is_identity_matrix(m)
+        actual = task.is_identity_matrix(m)  # ty: ignore[unresolved-attribute]
         assert is_bool(actual), "result must be a bool"
         assert actual == property["one"], f"failure in {m}"
 
@@ -122,7 +122,7 @@ def test_is_identity_matrix(integer_matrices):
 def test_is_zero_matrix(integer_matrices):
     skip_if_no_function(task, "is_zero_matrix")
     for m, property in integer_matrices:
-        actual = task.is_zero_matrix(m)
+        actual = task.is_zero_matrix(m)  # ty: ignore[unresolved-attribute]
         assert is_bool(actual), "result must be a bool"
         assert actual == property["zero"], f"failure in {m}"
 
@@ -130,30 +130,38 @@ def test_is_zero_matrix(integer_matrices):
 @optional
 def test_is_idempotent():
     skip_if_no_function(task, "is_idempotent")
-    assert task.is_idempotent(np.array([[1, 2], [3, 4]])) is False
-    assert task.is_idempotent(np.array([[0, 0], [0, 0]])) is True
-    assert task.is_idempotent(np.array([[1, 0], [0, 0]])) is True
-    assert task.is_idempotent(np.array([[3, -6], [1, -2]])) is True
-    assert task.is_idempotent(np.array([[0, 1], [0, 0]])) is False
-    assert task.is_idempotent(np.array([[0, 0, 0], [0, 0, 0]])) is False
-    assert task.is_idempotent(np.array([[0, 0, 0]])) is False
-    assert task.is_idempotent(np.array([[0]])) is True
-    assert task.is_idempotent(np.array([[1]])) is True
-    assert task.is_idempotent(np.array([[-1]])) is False
+    cases = [
+        ([[1, 2], [3, 4]], False),
+        ([[0, 0], [0, 0]], True),
+        ([[1, 0], [0, 0]], True),
+        ([[3, -6], [1, -2]], True),
+        ([[0, 1], [0, 0]], False),
+        ([[0, 0, 0], [0, 0, 0]], False),
+        ([[0, 0, 0]], False),
+        ([[0]], True),
+        ([[1]], True),
+        ([[-1]], False),
+    ]
+    for m, e in cases:
+        assert task.is_idempotent(np.array(m)) is e  # ty: ignore[unresolved-attribute]
 
 
 @optional
 def test_is_nilpotent():
     skip_if_no_function(task, "is_nilpotent")
-    assert task.is_nilpotent(np.array([[1, 2], [3, 4]])) is False
-    assert task.is_nilpotent(np.array([[0, 0], [0, 0]])) is True
-    assert task.is_nilpotent(np.array([[1, 0], [0, 0]])) is False
-    assert task.is_nilpotent(np.array([[0, 1], [0, 0]])) is True
-    assert task.is_nilpotent(np.array([[0, 0, 0], [0, 0, 0]])) is False
-    assert task.is_nilpotent(np.array([[0, 0, 0]])) is False
-    assert task.is_nilpotent(np.array([[0]])) is True
-    assert task.is_nilpotent(np.array([[1]])) is False
-    assert task.is_nilpotent(np.array([[-1]])) is False
+    cases = [
+        ([[1, 2], [3, 4]], False),
+        ([[0, 0], [0, 0]], True),
+        ([[1, 0], [0, 0]], False),
+        ([[0, 1], [0, 0]], True),
+        ([[0, 0, 0], [0, 0, 0]], False),
+        ([[0, 0, 0]], False),
+        ([[0]], True),
+        ([[1]], False),
+        ([[-1]], False),
+    ]
+    for m, e in cases:
+        assert task.is_nilpotent(np.array(m)) is e  # ty: ignore[unresolved-attribute]
 
     # advanced examples
     n3 = [[2, 2, -2], [5, 1, -3], [1, 5, -3]]
@@ -164,8 +172,8 @@ def test_is_nilpotent():
         [1, 1, 7, 1, -5],
         [1, 1, 1, 7, -5],
     ]
-    assert task.is_nilpotent(np.array(n3)) is True
-    assert task.is_nilpotent(np.array(n5)) is True
+    assert task.is_nilpotent(np.array(n3)) is True  # ty: ignore[unresolved-attribute]
+    assert task.is_nilpotent(np.array(n5)) is True  # ty: ignore[unresolved-attribute]
 
 
 def test_classify_linear_system():

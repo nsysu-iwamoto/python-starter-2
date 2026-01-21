@@ -1,15 +1,17 @@
 import math
 import random
+from typing import Optional
 
 import numpy as np
+import numpy.testing
 import pytest
 from conftest import assert_has_function, optional, skip_if_no_function
-from numpy.testing import assert_allclose
 
 import task06_numpy as task
 
 
-TOL = {"rtol": 1e-7, "atol": 1e-10}
+def assert_allclose(a, e, err_msg: Optional[str] = None):
+    numpy.testing.assert_allclose(a, e, rtol=1e-7, atol=1e-10, err_msg=err_msg)
 
 
 def test_rotation_matrix_2d():
@@ -20,22 +22,22 @@ def test_rotation_matrix_2d():
     expected = np.array([[1, 0], [0, 1]])
     assert isinstance(r, np.ndarray), "result must be a numpy array"
     assert r.shape == (2, 2), "result must be a 2x2 numpy array"
-    assert_allclose(r, expected, **TOL)
+    assert_allclose(r, expected)
 
     # pi / 2
     r = task.rotation_matrix_2d(math.pi / 2)
     expected = np.array([[0, -1], [1, 0]])
-    assert_allclose(r, expected, **TOL, err_msg="(radian/degree confusion?)")
+    assert_allclose(r, expected, err_msg="(radian/degree confusion?)")
     # 30 radians
     r = task.rotation_matrix_2d(30)
     c, s = 0.154251449888, -0.988031624093
     expected = np.array([[c, -s], [s, c]])
-    assert_allclose(r, expected, **TOL, err_msg="(radian/degree confusion?)")
+    assert_allclose(r, expected, err_msg="(radian/degree confusion?)")
 
     for i in range(-5, 5):
         r = task.rotation_matrix_2d(30 + 2 * math.pi * i)
         expected = np.array([[c, -s], [s, c]])
-        assert_allclose(r, expected, **TOL)
+        assert_allclose(r, expected)
 
     # random
     for _ in range(10):
@@ -52,22 +54,22 @@ def test_rotation_matrix_2d_degree():
     expected = np.array([[1, 0], [0, 1]])
     assert isinstance(r, np.ndarray), "result must be a numpy array"
     assert r.shape == (2, 2), "result must be a 2x2 numpy array"
-    assert_allclose(r, expected, **TOL)
+    assert_allclose(r, expected)
 
     # pi / 2
     r = task.rotation_matrix_2d(math.pi / 2)
     expected = np.array([[0, -1], [1, 0]])
-    assert_allclose(r, expected, **TOL, err_msg="(radian/degree confusion?)")
+    assert_allclose(r, expected, err_msg="(radian/degree confusion?)")
     # 30 degrees
     r = task.rotation_matrix_2d_degree(30)
     c, s = 0.866025403784, 0.5
     expected = np.array([[c, -s], [s, c]])
-    assert_allclose(r, expected, **TOL, err_msg="(radian/degree confusion?)")
+    assert_allclose(r, expected, err_msg="(radian/degree confusion?)")
 
     for i in range(-5, 5):
         r = task.rotation_matrix_2d_degree(30 + 360 * i)
         expected = np.array([[c, -s], [s, c]])
-        assert_allclose(r, expected, **TOL)
+        assert_allclose(r, expected)
     for _ in range(10):
         r = task.rotation_matrix_2d(random.randint(-2000, 2000))
         assert r[0, 0] == r[1, 1], "diagonal elements should be equal"
@@ -137,11 +139,11 @@ def test_rotation_matrix_3d():
         ((math.pi, 0, math.pi), [[-1, 0, 0], [0, 1, 0], [0, 0, -1]]),
     ]
     for angles, matrix in cases:
-        actual = task.rotation_matrix_3d(*angles)
+        actual = task.rotation_matrix_3d(*angles)  # ty: ignore[unresolved-attribute]
         expected = np.array(matrix)
         assert isinstance(actual, np.ndarray), "result must be a numpy array"
         assert actual.shape == (3, 3), "result must be a 3x3 numpy array"
-        assert_allclose(actual, expected, **TOL)
+        assert_allclose(actual, expected)
     # numerical
     cases = [
         (
@@ -162,6 +164,6 @@ def test_rotation_matrix_3d():
         ),
     ]
     for angles, matrix in cases:
-        actual = task.rotation_matrix_3d(*angles)
+        actual = task.rotation_matrix_3d(*angles)  # ty: ignore[unresolved-attribute]
         expected = np.array(matrix)
         assert_allclose(actual, expected)

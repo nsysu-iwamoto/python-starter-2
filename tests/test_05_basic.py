@@ -2,7 +2,7 @@ import math
 import random
 
 import pytest
-from conftest import assert_has_function, optional, skip_if_no_function
+from conftest import assert_has_function, optional
 
 import task05_basic as task
 
@@ -97,7 +97,7 @@ def test_calc_e():
 
 @optional
 def test_solve_equation_very_precise():
-    skip_if_no_function(task, "solve_equation")
+    assert_has_function(task, "solve_equation")
     a = 1
     c = 1
     s2 = 100000
@@ -105,9 +105,9 @@ def test_solve_equation_very_precise():
     b = -(s1 + s2)
     expected = (s1, s2)
     actual = task.solve_equation(a, b, c)
-    assert (
-        actual == expected
-    ), f"got {actual} for a=c=1, b={b}; too big error from expected {expected}"
+    assert actual == expected, (
+        f"got {actual} for a=c=1, b={b}; too big error from expected {expected}"
+    )
     for _ in range(10):
         a = 1
         c = random.randint(1, 100) / 1000
@@ -121,7 +121,7 @@ def test_solve_equation_very_precise():
 
 @optional
 def test_calc_e_very_precise():
-    skip_if_no_function(task, "calc_e")
+    assert_has_function(task, "calc_e")
     actual = task.calc_e()
     e0 = 2.71828182845904464  # 2.71828182845904464
     e1 = math.nextafter(e0, 3)  # 2.71828182845904509  # e=904523; closest

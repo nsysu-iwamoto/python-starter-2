@@ -7,8 +7,8 @@ def calc_e():
 
 
 def solve_equation(a, b, c):
-    # print(sqrt(2))
-    # print(2**10)
+    print(sqrt(2))
+    print(2**10)
     sample_of_list = [1, 2, 3]  # this is a list.
     sample_of_tuple = (1, 2, 3)  # this is a tuple, different from the list
     print(sample_of_list == sample_of_tuple)

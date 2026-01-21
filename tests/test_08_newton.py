@@ -1,11 +1,11 @@
-import numpy as np
+import math
+import random
+from typing import Callable
+
 import pytest
-from conftest import assert_has_function, optional, skip_if_no_function
+from conftest import assert_has_function
 
 import task08_newton as task
-
-import random
-import math
 
 
 def test_fixed_point_iteration():
@@ -39,11 +39,14 @@ def test_fixed_point_iteration_another_function():
     assert actual[100] == pytest.approx(0.68232780)
 
 
+type_f = Callable[[float], float]
+
+
 def test_newton():
-    def f_sqrt(k):
+    def f_sqrt(k: float) -> tuple[type_f, type_f]:
         return (lambda x: x * x - k, lambda x: 2 * x)
 
-    def f_cubic(a, b, c):
+    def f_cubic(a: float, b: float, c: float) -> tuple[type_f, type_f]:
         return (lambda x: ((x + a) * x + b) * x + c, lambda x: (3 * x + 2 * a) * x + b)
 
     assert_has_function(task, "newton")
