@@ -60,6 +60,15 @@ print(fixed_point_iteration(g, 1.0, 2))
   - `n` is the number of iterations (int).
 - **Output**: a list of n+1 floats. The first element is x0. The last element is xn.
 
+**Example:**
+```python
+def g(x):
+    return (x * x + 1) / 3
+
+result = fixed_point_iteration(g, 1.0, 5)
+# Should return [1.0, 0.667..., 0.481..., 0.411..., 0.390..., 0.380...]
+```
+
 <details>
 <summary>Click to see hint</summary>
 
@@ -118,6 +127,18 @@ print(solution)
 
 - **Input**: aforementioned `f`, `fp`, `x0` (int/float), `eps` (float), and `n` (int).
 - **Output**: a floating-point number or `None`.
+
+**Example:**
+```python
+def f(x):
+    return x * x - 2
+
+def fp(x):
+    return 2 * x
+
+result = newton(f, fp, 1.0)  # Find sqrt(2)
+# Should return approximately 1.414213562373095
+```
 
 ## Task 08c (Optional)
 

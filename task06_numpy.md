@@ -48,6 +48,11 @@ Complete two functions `rotation_matrix_2d(theta)` and `rotation_matrix_2d_degre
 - **Input**: `theta` or `degree` (float)
 - **Output**: a 2x2 NumPy array
 
+**Examples:**
+- `rotation_matrix_2d(np.pi/2)` should return approximately `[[0, -1], [1, 0]]` (90° rotation)
+- `rotation_matrix_2d_degree(90)` should return approximately `[[0, -1], [1, 0]]` (90° rotation)
+- `rotation_matrix_2d(0)` should return `[[1, 0], [0, 1]]` (identity matrix, no rotation)
+
 The 2D rotation matrix is:
 
 $$
@@ -91,6 +96,11 @@ We are going to use **tuples** to represent vectors and points. Complete a funct
 - **Input**: `p1` and `p2` are tuples of two floats. Namely, `(x1, y1)` and `(x2, y2)`.
 - **Output**: a float representing the distance between `p1` and `p2`.
 
+**Examples:**
+- `distance((0, 0), (3, 4))` should return `5.0` (3-4-5 right triangle)
+- `distance((1, 2), (4, 6))` should return `5.0`
+- `distance((0, 0), (0, 0))` should return `0.0`
+
 The distance formula is:
 
 $$d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$$
@@ -124,6 +134,11 @@ You should use `rotation_matrix_2d(theta)` from Task 06a. Also you are asked to 
 
 - **Input**: `p` is a tuple of two floats. `theta` is the rotation angle in radians.
 - **Output**: a tuple `(x, y)` of two floats.
+
+**Examples:**
+- `rotate((1, 0), np.pi/2)` should return approximately `(0, 1)` (point (1,0) rotated 90° becomes (0,1))
+- `rotate((3, 0), np.pi)` should return approximately `(-3, 0)` (point (3,0) rotated 180° becomes (-3,0))
+- `rotate((1, 1), 0)` should return `(1, 1)` (no rotation)
 
 <details>
 <summary>Click to see hint</summary>

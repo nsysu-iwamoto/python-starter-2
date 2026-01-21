@@ -24,6 +24,12 @@ A function `solve_equation(a, b, c)` should solve the equation $ax^2+bx+c=0$. Fi
   - If the equation has no real solution, both elements should be `None`. For example, `(None, None)` for $x^2+1=0$.
   - Otherwise, the first element should be the smaller solution and the second element should be the larger solution.
 
+**Examples:**
+- `solve_equation(1, -3, 2)` should return `(1, 2)` (solutions to $x^2 - 3x + 2 = 0$)
+- `solve_equation(1, -2, 1)` should return `(1, None)` (solution to $x^2 - 2x + 1 = 0$)
+- `solve_equation(1, 0, 1)` should return `(None, None)` (no real solutions to $x^2 + 1 = 0$)
+- `solve_equation(0, 2, -4)` should return `(2, None)` (solution to $2x - 4 = 0$)
+
 Notice the difference between **tuples** and **lists**:
 
 - Tuples use parentheses: `(1, 2)` and are immutable
@@ -58,6 +64,8 @@ Make a function `calc_e()` to calculate `e` by this method, at least up to 9-th 
 
 - **Input**: None
 - **Output**: a float representing the value of $e$, accurate to at least 9 decimal places
+
+**Expected result:** `calc_e()` should return approximately `2.718281828459045`
 
 <details>
 <summary>Click to see hint</summary>

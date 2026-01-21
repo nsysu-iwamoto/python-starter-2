@@ -45,6 +45,21 @@ All the functions have the same signature:
 
 You can assume `m` is a NumPy 2d array with at least one element; no need to check it.
 
+**Examples:**
+```python
+identity = np.array([[1, 0], [0, 1]])
+is_square(identity)        # True
+is_symmetric(identity)     # True
+is_diagonal(identity)      # True
+
+matrix = np.array([[1, 2], [3, 4]])
+is_square(matrix)          # True
+is_symmetric(matrix)       # False
+
+upper = np.array([[1, 2, 3], [0, 4, 5], [0, 0, 6]])
+is_upper_triangular(upper) # True
+```
+
 <details>
 <summary>Click to see hint</summary>
 
@@ -103,6 +118,21 @@ For a system $Ax = b$ with augmented matrix $[A|b]$:
 - **Unique solution**: $\text{rank}(A) = \text{rank}([A|b]) = n$ (number of unknowns)
 - **Infinitely many solutions**: $\text{rank}(A) = \text{rank}([A|b]) < n$
 - **No solution**: $\text{rank}(A) < \text{rank}([A|b])$
+
+**Examples:**
+```python
+# System: x + 2y = 3, 4x + 5y = 6
+aug1 = np.array([[1, 2, 3], [4, 5, 6]])
+classify_linear_system(aug1)  # "unique"
+
+# System: x + 2y = 3, 2x + 4y = 6 (same line, infinitely many solutions)
+aug2 = np.array([[1, 2, 3], [2, 4, 6]])
+classify_linear_system(aug2)  # "many"
+
+# System: x + 2y = 3, 2x + 4y = 7 (parallel lines, no solution)
+aug3 = np.array([[1, 2, 3], [2, 4, 7]])
+classify_linear_system(aug3)  # "none"
+```
 
 <details>
 <summary>Click to see hint</summary>
