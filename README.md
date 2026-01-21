@@ -30,6 +30,8 @@ See Documents in Python Starter 1 for further information.
 
 ## Tasks
 
+Complete these tasks in order:
+
 - [ ] 5. [Basic Numerics](task05_basic.md) - Equations and series
 - [ ] 6. [NumPy](task06_numpy.md) - Arrays and vector operations
 - [ ] 7. [Matrix](task07_matrix.md) - Matrix operations and properties
@@ -39,6 +41,14 @@ Each task includes:
 
 - Basic problems (required)
 - Optional problems (advanced, for extra learning)
+
+### Quick Tips
+
+- Start with Task 5 and complete tasks in order
+- Read the task instructions carefully (open `.md` files in browser for better equation rendering)
+- Test your code frequently with `python taskXX_xxx.py`
+- Run tests with `python -m pytest tests/test_XX_xxx.py -v`
+- Commit your work often with Git
 
 ## License
 

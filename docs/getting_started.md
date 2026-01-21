@@ -310,6 +310,32 @@ print(f"Debug: x = {x}")  # See what values variables have
 - Use SSH keys
 - See: [https://docs.github.com/en/authentication](https://docs.github.com/en/authentication)
 
+### "SyntaxError: invalid syntax"
+
+**Solution**: Common causes:
+
+- Missing parentheses: `print "hello"` should be `print("hello")`
+- Incorrect indentation (mixing tabs and spaces)
+- Missing colon `:` after `if`, `for`, `def`, etc.
+- Check the line number in the error message
+
+### "IndentationError: unexpected indent"
+
+**Solution**: 
+
+- Python is sensitive to indentation
+- Use consistent spaces (4 spaces per level recommended)
+- Don't mix tabs and spaces
+- Make sure code blocks under `if`, `for`, `def` are properly indented
+
+### Tests pass locally but fail on GitHub Actions
+
+**Solution**:
+
+- Make sure you committed and pushed all changes
+- Check if you have any local-only files or configurations
+- Look at the GitHub Actions log for specific error messages
+
 ## Getting Help
 
 If you're stuck:

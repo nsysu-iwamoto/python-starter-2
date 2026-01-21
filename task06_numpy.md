@@ -211,19 +211,6 @@ You can multiply these matrices together using `@` or `np.dot()`.
    - ❌ Returning a NumPy array for point coordinates
    - ✅ Convert to tuple: `tuple(array)`
 
-### Creating Arrays
-
-```python
-import numpy as np
-
-# From list
-arr = np.array([1, 2, 3])
-
-# 2D array (matrix)
-matrix = np.array([[1, 2], 
-                   [3, 4]])
-```
-
 ### Array Operations
 
 ```python
@@ -236,6 +223,26 @@ c = a + b  # [5, 7, 9]
 A = np.array([[1, 2], [3, 4]])
 B = np.array([[5, 6], [7, 8]])
 C = A @ B  # Matrix product
+```
+
+### Useful NumPy Functions for This Task
+
+```python
+import numpy as np
+
+# Trigonometric functions
+np.sin(angle)    # Sine (angle in radians)
+np.cos(angle)    # Cosine (angle in radians)
+
+# Angle conversion
+np.radians(deg)  # Convert degrees to radians
+np.deg2rad(deg)  # Alternative way to convert
+
+# Array creation
+np.array([[a, b], [c, d]])  # Create 2D array (matrix)
+
+# Linear algebra
+np.linalg.norm(vector)  # Calculate vector length/norm
 ```
 
 ## Need Help?
