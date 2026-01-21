@@ -1,10 +1,12 @@
 # python-starter-2
 
-Introduction to Numerical Analysis
+An Introductory exercise for numerical analysis (Step 2), prepared for Sho's lecture course “[Math and Coding in Physics](https://www2.nsysu.edu.tw/iwamoto/physmath2.html)”.
+
+Set-up details, instructions, and basic steps are provided in `python-starter-1`, so try it first before these tasks.
 
 ## Requirements
 
-You need to install [`NumPy`](https://numpy.org/) and [`SciPy`](https://scipy.org/). Furthermore, if you want to run "test codes" on your laptop, you will need [`PyTest`](https://pytest.org/) and `PyTest-Timeout`. They can be installed using `pip` (using a virtual environment is recommended but optional):
+You need to install [`NumPy`](https://numpy.org/) and [`SciPy`](https://scipy.org/). Furthermore, if you want to run "test codes" on your laptop, you will need [`PyTest`](https://pytest.org/) and `PyTest-Timeout`. They can be installed using `pip`:
 
 ```bash
 # commands may be python3 and pip3 on your system,
