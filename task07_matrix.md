@@ -11,6 +11,11 @@ In this task, you'll learn:
 - How to classify linear systems of equations
 - How to use matrix rank to determine solution existence
 
+**Why this matters in physics:**
+- Linear systems appear in circuit analysis, statics, and quantum mechanics
+- Matrix properties reveal conservation laws and symmetries in physical systems
+- Understanding solution types helps predict system behavior
+
 Open `task07_matrix.py` and edit the file to do the following tasks.
 
 ### Names for Matrices

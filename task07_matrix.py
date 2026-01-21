@@ -5,10 +5,10 @@ import numpy as np
 
 def is_square(m):
     """Check if a matrix is square (rows = columns).
-    
+
     Args:
         m (np.ndarray): A 2D NumPy array
-        
+
     Returns:
         bool: True if square, False otherwise
     """
@@ -21,10 +21,10 @@ def is_square(m):
 
 def is_symmetric(m):
     """Check if a matrix is symmetric (A = A^T).
-    
+
     Args:
         m (np.ndarray): A 2D NumPy array
-        
+
     Returns:
         bool: True if symmetric, False otherwise
     """
@@ -34,10 +34,10 @@ def is_symmetric(m):
 
 def is_skew_symmetric(m):
     """Check if a matrix is skew-symmetric (A = -A^T).
-    
+
     Args:
         m (np.ndarray): A 2D NumPy array
-        
+
     Returns:
         bool: True if skew-symmetric, False otherwise
     """
@@ -46,10 +46,10 @@ def is_skew_symmetric(m):
 
 def is_upper_triangular(m):
     """Check if a matrix is upper triangular.
-    
+
     Args:
         m (np.ndarray): A 2D NumPy array
-        
+
     Returns:
         bool: True if upper triangular, False otherwise
     """
@@ -58,10 +58,10 @@ def is_upper_triangular(m):
 
 def is_lower_triangular(m):
     """Check if a matrix is lower triangular.
-    
+
     Args:
         m (np.ndarray): A 2D NumPy array
-        
+
     Returns:
         bool: True if lower triangular, False otherwise
     """
@@ -71,10 +71,10 @@ def is_lower_triangular(m):
 
 def is_diagonal(m):
     """Check if a matrix is diagonal.
-    
+
     Args:
         m (np.ndarray): A 2D NumPy array
-        
+
     Returns:
         bool: True if diagonal, False otherwise
     """
@@ -84,10 +84,10 @@ def is_diagonal(m):
 
 def classify_linear_system(aug):
     """Classify a linear system as unique, many, or no solutions.
-    
+
     Args:
         aug (np.ndarray): Augmented matrix [A|b]
-        
+
     Returns:
         str: "unique", "many", or "none"
     """

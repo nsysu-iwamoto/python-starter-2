@@ -7,10 +7,10 @@ import numpy as np
 
 def rotation_matrix_2d(theta):
     """Create a 2D rotation matrix for the given angle in radians.
-    
+
     Args:
         theta (float): Rotation angle in radians
-        
+
     Returns:
         np.ndarray: 2x2 rotation matrix
     """
@@ -19,10 +19,10 @@ def rotation_matrix_2d(theta):
 
 def rotation_matrix_2d_degree(deg):
     """Create a 2D rotation matrix for the given angle in degrees.
-    
+
     Args:
         deg (float): Rotation angle in degrees
-        
+
     Returns:
         np.ndarray: 2x2 rotation matrix
     """
@@ -31,10 +31,10 @@ def rotation_matrix_2d_degree(deg):
 
 def distance(p1, p2):
     """Calculate the Euclidean distance between two 2D points.
-    
+
     Args:
         p1, p2 (tuple): Points as (x, y) tuples
-        
+
     Returns:
         float: Distance between the points
     """
@@ -43,11 +43,11 @@ def distance(p1, p2):
 
 def rotate(p, theta):
     """Rotate a 2D point by the given angle.
-    
+
     Args:
         p (tuple): Point as (x, y) tuple
         theta (float): Rotation angle in radians
-        
+
     Returns:
         tuple: Rotated point as (x, y) tuple
     """

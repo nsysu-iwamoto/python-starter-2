@@ -4,7 +4,7 @@ from math import sqrt
 
 def calc_e():
     """Calculate Euler's number e using the series expansion.
-    
+
     Returns:
         float: Value of e accurate to at least 9 decimal places
     """
@@ -13,15 +13,15 @@ def calc_e():
 
 def solve_equation(a, b, c):
     """Solve the quadratic equation ax^2 + bx + c = 0.
-    
+
     Args:
         a, b, c (float): Coefficients of the equation
-        
+
     Returns:
         tuple: (x1, x2) where x1 <= x2 if two solutions exist
                (x, None) if one solution exists
                (None, None) if no real solutions exist
-               
+
     Raises:
         ValueError: If a = b = 0 (not a valid equation)
     """

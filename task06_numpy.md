@@ -11,6 +11,11 @@ In this task, you'll learn:
 - How to work with vectors and points as tuples
 - How to convert between degrees and radians
 
+**Why this matters in physics:**
+- Rotation matrices describe transformations in quantum mechanics and crystallography
+- Vector operations are fundamental to mechanics, electromagnetism, and relativity
+- NumPy is the foundation for scientific computing in Python
+
 Open `task06_numpy.py` and edit the file to do the following tasks.
 
 You may open this file on GitHub so that equations are shown properly.

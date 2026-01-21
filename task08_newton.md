@@ -14,6 +14,11 @@ In this task, you'll learn:
 - How to pass functions as arguments to other functions
 - How to handle convergence and stopping criteria
 
+**Why this matters in physics:**
+- Newton's method finds energy minima, equilibrium points, and eigenvalues
+- Iterative methods solve equations that have no analytical solutions
+- These techniques are used in computational physics, from particle trajectories to field equations
+
 Open `task08_newton.py` and edit the file to do the following tasks.
 
 ### Understanding Functions as Arguments

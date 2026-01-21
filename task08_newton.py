@@ -3,12 +3,12 @@
 
 def fixed_point_iteration(g, x0, n):
     """Perform fixed-point iteration.
-    
+
     Args:
         g (callable): Function to iterate
         x0 (float): Initial value
         n (int): Number of iterations
-        
+
     Returns:
         list: Sequence [x0, x1, x2, ..., xn] of length n+1
     """
@@ -22,14 +22,14 @@ def fixed_point_iteration(g, x0, n):
 
 def newton(f, fp, x0, eps=1e-7, n=100000):
     """Find a root of f using Newton's method.
-    
+
     Args:
         f (callable): Function to find root of
         fp (callable): Derivative of f
         x0 (float): Initial guess
         eps (float): Convergence tolerance (default: 1e-7)
         n (int): Maximum iterations (default: 100000)
-        
+
     Returns:
         float: Approximate root, or None if no convergence
     """

@@ -11,6 +11,11 @@ In this task, you'll learn:
 - How to handle special cases and edge conditions
 - How to work with tuples for multiple return values
 
+**Why this matters in physics:**
+- Quadratic equations appear everywhere: projectile motion, energy levels, oscillations
+- Mathematical constants like $e$ are fundamental to exponential decay, growth, and wave functions
+- Numerical precision is crucial for accurate physics calculations
+
 Open `task05_basic.py` and edit the file to do the following tasks.
 
 ## Task 05a (Required)
