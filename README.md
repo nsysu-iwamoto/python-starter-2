@@ -1,8 +1,49 @@
 # python-starter-2
 
-An Introductory exercise for numerical analysis (Step 2), prepared for Sho's lecture course “[Math and Coding in Physics](https://www2.nsysu.edu.tw/iwamoto/physmath2.html)”.
+An Introductory exercise for numerical analysis (Step 2), prepared for Sho's lecture course "[Math and Coding in Physics](https://www2.nsysu.edu.tw/iwamoto/physmath2.html)".
 
-Set-up details, instructions, and basic steps are provided in `python-starter-1`, so try it first before these tasks.
+## 🚀 Quick Start
+
+**New to this course? Start here!**
+
+👉 **[Getting Started Guide](docs/getting_started.md)** - Complete setup instructions
+
+**Already completed python-starter-1?** Great! This is the next step. If not, please complete python-starter-1 first.
+
+### Essential Guides
+
+- 📚 [Getting Started Guide](docs/getting_started.md) - Setup and how to complete tasks
+- 🔧 [Git Introduction](docs/git_intro.md) - Learn Git basics
+
+## Tasks
+
+- [ ] 5. [Basic Numerics](task05_basic.md) - Equations and series
+- [ ] 6. [NumPy](task06_numpy.md) - Arrays and vector operations
+- [ ] 7. [Matrix](task07_matrix.md) - Matrix operations and properties
+- [ ] 8. [Newton Method](task08_newton.md) - Numerical methods
+
+Each task includes:
+
+- Basic problems (required)
+- Optional problems (advanced, for extra learning)
+
+## How to Work on Tasks
+
+### Method 1: Edit on GitHub (Simplest)
+
+You can edit `.py` files directly on GitHub through your web browser.
+
+### Method 2: Work on Your Computer (Recommended)
+
+**This is the recommended approach for learning Git and proper development workflow.**
+
+1. **Clone** this repository to your computer
+2. **Edit** files on your computer
+3. **Test** your code locally
+4. **Commit** your changes
+5. **Push** to GitHub
+
+See the [Getting Started Guide](docs/getting_started.md) for detailed instructions.
 
 ## Requirements
 
@@ -13,33 +54,41 @@ You need to install [`NumPy`](https://numpy.org/) and [`SciPy`](https://scipy.or
 python --version  # Check version >= 3.8
 pip --version     # Check your pip is for correct Python version
 
-pip install numpy scipy
-pip install pytest pytest-timeout
+pip install numpy scipy pytest pytest-timeout
 ```
 
-## Tasks
+Detailed setup instructions are provided in [Getting Started Guide](docs/getting_started.md).
 
-- [ ] 5. [Basic Numerics](/task05_basic.md)
-- [ ] 6. [NumPy](/task06_numpy.md)
-- [ ] 7. [Matrix](/task07_matrix.md)
-- [ ] 8. [Newton Method](/task08_newton.md)
+## Testing Your Code
 
-Open each `.md` file. Following the instructions, edit `.py` files.
+You may "test" your code automatically. Test system is provided on the GitHub, but you can run the tests on your computer if you install some tools.
 
-You can edit `.py` files on GitHub, but it is recommended to code on your computer. Following Git/GitHub starter, you are asked to
+### What are Tests?
 
-- **clone** this GitHub repository (*remote repository*) to your computer,
-- edit your files on your computer,
-- **commit** your changes to the repository in your computer (*local repository*), and
-- **push** your local repository to the *remote repository* on GitHub.
-- Then, if you can, try **creating a pull request** following [this instruction](/misc/github_pull_request.pdf).
+**Tests** are automated programs that check if your code works correctly. Think of them as a teacher checking your homework automatically! See the [Getting Started Guide](docs/getting_started.md) for more details on how tests work.
 
-## How to run test codes
+### Running Tests
 
-Try `python -m pytest` on the root directory of this repository (i.e., where this file is).
+```bash
+# Run all tests
+python -m pytest
 
-If you want to test your code for optional problems, run `python -m pytest --optionial`.
+# Run tests for a specific task
+python -m pytest tests/test_05_basic.py -v
 
-If you want to run a specific test file, you can use `python -m pytest -k tests/test_file_name.py`.
+# Include optional problems
+python -m pytest --optional
+```
 
-(But test codes may have bugs because you are the first tester of these tests! Please let me know if you find any problems.)
+**Note:** Test codes may have bugs - you are the first testers! Please report any issues.
+
+## Getting Help
+
+1. Read the documentation in the [`docs/`](docs/) folder
+2. Check error messages carefully
+3. Ask your instructor or classmates
+4. Search online for Python/NumPy concepts
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
