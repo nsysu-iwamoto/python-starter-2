@@ -179,4 +179,4 @@ This is not a coding problem. Explain how many terms you should sum up to get `e
 - Review Python's `math` module documentation
 - Understand the quadratic formula and discriminant
 - Test with simple examples first (e.g., $x^2 - 1 = 0$)
-- See the [Getting Started Guide](docs/getting_started.md) for more help
+- See the [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup and testing help

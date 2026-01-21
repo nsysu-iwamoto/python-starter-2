@@ -266,4 +266,4 @@ A[:2, :]  # [[1, 2, 3], [4, 5, 6]]
 - Review NumPy documentation on array operations and linear algebra
 - Understand matrix properties from your textbook (Kreyszig Section 7.2)
 - Test with simple examples first (e.g., identity matrix, zero matrix)
-- See the [Getting Started Guide](docs/getting_started.md) for more help
+- See the [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup and testing help

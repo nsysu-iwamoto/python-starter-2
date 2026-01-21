@@ -299,4 +299,4 @@ Not all methods converge from all starting points:
 - Review Section 19.2 of Kreyszig textbook
 - Understand the geometric interpretation of Newton's method
 - Test with simple examples first (e.g., finding $\sqrt{2}$ by solving $x^2 - 2 = 0$)
-- See the [Getting Started Guide](docs/getting_started.md) for more help
+- See the [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup and testing help

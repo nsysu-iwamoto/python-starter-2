@@ -17,7 +17,7 @@ You may open this file on GitHub so that equations are shown properly.
 
 ## NumPy and SciPy
 
-This task requires you to use NumPy (and SciPy in future tasks). If you haven't installed them, please refer to the [README.md](README.md) file or [Getting Started Guide](docs/getting_started.md).
+This task requires you to use NumPy (and SciPy in future tasks). If you haven't installed them, please refer to the [README.md](README.md) file.
 
 ## Software Design: Establishing Conventions
 
@@ -275,4 +275,4 @@ C = A @ B  # Matrix product
 - Review NumPy documentation: [https://numpy.org/doc/stable/](https://numpy.org/doc/stable/)
 - Understand rotation matrices and trigonometry
 - Test with simple examples first (e.g., rotate (1, 0) by π/2)
-- See the [Getting Started Guide](docs/getting_started.md) for more help
+- See the [python-starter-1](https://github.com/nsysu-iwamoto/python-starter-1) for setup and testing help
