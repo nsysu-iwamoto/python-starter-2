@@ -103,7 +103,7 @@ For a system $Ax = b$ with augmented matrix $[A|b]$:
 - **No solution**: $\text{rank}(A) < \text{rank}([A|b])$
 
 <details>
-<parameter name="Click to see hint</summary>
+<summary>Click to see hint</summary>
 
 You don't have to implement rank calculation. Read [the manual of numpy.linalg](https://numpy.org/doc/stable/reference/routines.linalg.html) very carefully.
 
